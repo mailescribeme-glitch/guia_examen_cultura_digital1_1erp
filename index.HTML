@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1e3a8a">
+<title>Guía de Estudio - Cultura Digital 1 (Primer Parcial)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f0f4f8; color: #1e293b; line-height: 1.6; padding: 12px;
+    overflow-x: hidden;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+
+  /* ===== BANNER ===== */
+  .banner {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6, #60a5fa);
+    color: white; padding: 26px 18px; border-radius: 16px;
+    margin-bottom: 16px; box-shadow: 0 6px 20px rgba(30,58,138,0.3);
+    text-align: center;
+  }
+  .banner h1 { font-size: 1.35rem; margin-bottom: 8px; line-height: 1.3; }
+  .banner p { font-size: 0.92rem; opacity: 0.95; line-height: 1.5; }
+  .banner .autor {
+    font-size: 0.82rem; opacity: 0.9; margin-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;
+  }
+  @media (min-width: 640px) {
+    .banner { padding: 35px 30px; }
+    .banner h1 { font-size: 2rem; }
+    .banner p { font-size: 1rem; }
+  }
+
+  /* ===== ÍNDICE ===== */
+  .indice {
+    background: white; padding: 18px 20px; border-radius: 14px;
+    margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-left: 5px solid #3b82f6;
+  }
+  .indice h2 { color: #1e3a8a; font-size: 1.1rem; margin-bottom: 12px; }
+  .indice ol { padding-left: 20px; }
+  .indice li { margin-bottom: 8px; font-size: 0.92rem; }
+  .indice a {
+    color: #2563eb; text-decoration: none; font-weight: 600;
+    display: inline-block; padding: 2px 0;
+  }
+  .indice a:hover { text-decoration: underline; }
+
+  /* ===== TIP ESTUDIO ===== */
+  .tip {
+    background: #fef3c7; border-left: 5px solid #f59e0b;
+    padding: 14px 16px; border-radius: 10px; margin-bottom: 18px;
+    color: #78350f; font-size: 0.9rem; line-height: 1.55;
+  }
+  .tip strong { color: #b45309; }
+
+  /* ===== SECCIONES ===== */
+  .seccion {
+    background: white; border-radius: 14px; padding: 22px 18px;
+    margin-bottom: 20px; box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    border-top: 6px solid #3b82f6; scroll-margin-top: 12px;
+  }
+  .seccion h2 {
+    color: #1e3a8a; font-size: 1.15rem; margin-bottom: 4px; line-height: 1.3;
+  }
+  @media (min-width: 640px) { .seccion h2 { font-size: 1.45rem; } }
+  .seccion .subtitulo {
+    color: #64748b; font-size: 0.85rem; margin-bottom: 18px; font-style: italic;
+  }
+  .seccion h3 {
+    color: #1e40af; font-size: 1rem; margin: 18px 0 10px;
+    padding-bottom: 5px; border-bottom: 2px solid #dbeafe;
+  }
+  @media (min-width: 640px) { .seccion h3 { font-size: 1.15rem; } }
+  .seccion h4 {
+    color: #334155; font-size: 0.95rem; margin: 14px 0 6px;
+  }
+  .seccion p { font-size: 0.92rem; margin-bottom: 10px; line-height: 1.6; }
+  .seccion ul, .seccion ol { padding-left: 22px; margin-bottom: 12px; }
+  .seccion li { font-size: 0.9rem; margin-bottom: 6px; line-height: 1.55; }
+
+  /* ===== CONCEPTO DESTACADO ===== */
+  .concepto {
+    background: #eff6ff; border-left: 4px solid #3b82f6;
+    padding: 12px 14px; border-radius: 8px; margin: 12px 0;
+    font-size: 0.9rem; line-height: 1.55;
+  }
+  .concepto strong { color: #1e40af; }
+  .definicion {
+    background: #f0fdf4; border-left: 4px solid #22c55e;
+    padding: 12px 14px; border-radius: 8px; margin: 10px 0;
+    font-size: 0.9rem; line-height: 1.55;
+  }
+  .definicion strong { color: #166534; }
+  .alerta {
+    background: #fef2f2; border-left: 4px solid #dc2626;
+    padding: 12px 14px; border-radius: 8px; margin: 10px 0;
+    font-size: 0.88rem; line-height: 1.55; color: #7f1d1d;
+  }
+  .alerta strong { color: #991b1b; }
+  .ejemplo {
+    background: #fdf4ff; border-left: 4px solid #a855f7;
+    padding: 12px 14px; border-radius: 8px; margin: 10px 0;
+    font-size: 0.88rem; line-height: 1.55; color: #581c87;
+  }
+  .ejemplo strong { color: #7e22ce; }
+
+  /* ===== TABLAS ===== */
+  .tabla-wrap {
+    width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    margin: 14px 0; border-radius: 10px; border: 1px solid #e2e8f0;
+  }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    background: white; min-width: 480px;
+  }
+  th {
+    background: #1e3a8a; color: white; padding: 10px 12px;
+    text-align: left; font-weight: 600; font-size: 0.83rem;
+  }
+  td {
+    border: 1px solid #e2e8f0; padding: 10px 12px; vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:nth-child(even) td { background: #f8fafc; }
+  @media (min-width: 720px) {
+    table { font-size: 0.9rem; min-width: 100%; }
+    th { font-size: 0.88rem; }
+  }
+
+  /* ===== TARJETAS DE LIBERTADES ===== */
+  .grid-libertades {
+    display: grid; grid-template-columns: 1fr; gap: 12px; margin: 14px 0;
+  }
+  @media (min-width: 600px) { .grid-libertades { grid-template-columns: 1fr 1fr; } }
+  .tarjeta-libertad {
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    border: 2px solid #3b82f6; border-radius: 12px; padding: 14px;
+  }
+  .tarjeta-libertad .numero {
+    display: inline-block; background: #1e3a8a; color: white;
+    width: 30px; height: 30px; line-height: 30px; text-align: center;
+    border-radius: 50%; font-weight: 800; font-size: 0.9rem; margin-bottom: 8px;
+  }
+  .tarjeta-libertad h4 {
+    color: #1e40af; font-size: 0.98rem; margin-bottom: 6px;
+  }
+  .tarjeta-libertad p { font-size: 0.85rem; margin-bottom: 6px; line-height: 1.5; }
+
+  /* ===== MNEMOTECNIA ===== */
+  .mnemotecnia {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px dashed #d97706; border-radius: 12px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .mnemotecnia .titulo {
+    font-weight: 800; color: #92400e; font-size: 0.95rem;
+    margin-bottom: 8px; letter-spacing: 0.5px;
+  }
+  .mnemotecnia .palabra {
+    font-size: 1.3rem; font-weight: 800; color: #b45309;
+    margin: 8px 0; letter-spacing: 3px;
+  }
+  .mnemotecnia p { font-size: 0.88rem; color: #78350f; line-height: 1.55; }
+
+  /* ===== AUTOEVALUACIÓN ===== */
+  .autoevaluacion {
+    background: #ecfdf5; border: 2px solid #16a34a; border-radius: 12px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  .autoevaluacion h4 {
+    color: #166534; font-size: 1rem; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .autoevaluacion ol { padding-left: 22px; }
+  .autoevaluacion li { font-size: 0.88rem; margin-bottom: 8px; line-height: 1.55; color: #14532d; }
+  details {
+    background: white; border: 1px solid #86efac; border-radius: 8px;
+    padding: 10px 14px; margin-top: 10px; font-size: 0.88rem;
+    cursor: pointer; color: #166534;
+  }
+  details summary {
+    font-weight: 700; color: #15803d; outline: none; padding: 4px 0;
+  }
+  details[open] summary { margin-bottom: 10px; }
+  details p, details ul { color: #1e293b; font-size: 0.86rem; line-height: 1.55; }
+  details ul { padding-left: 20px; margin-top: 6px; }
+
+  /* ===== BOTÓN ARRIBA ===== */
+  .btn-arriba {
+    position: fixed; bottom: 16px; right: 16px; width: 48px; height: 48px;
+    border-radius: 50%; background: #1e3a8a; color: white; border: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25); font-size: 1.3rem;
+    cursor: pointer; display: none; align-items: center; justify-content: center;
+    z-index: 100; touch-action: manipulation;
+  }
+  .btn-arriba.visible { display: flex; }
+  .btn-arriba:active { transform: scale(0.92); }
+
+  /* ===== PIE ===== */
+  footer {
+    text-align: center; color: #64748b; font-size: 0.82rem;
+    padding: 20px 10px; border-top: 1px solid #e2e8f0;
+    margin-top: 24px; line-height: 1.55;
+  }
+  footer strong { color: #1e3a8a; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- BANNER -->
+  <div class="banner">
+    <h1>📚 Guía de Estudio — Cultura Digital 1</h1>
+    <p>Preparación completa para el Primer Parcial · Propósitos 1 al 4</p>
+    <div class="autor">
+      Elaborada por: LIA José Huidobro Espejel<br>
+      Colegio de Bachilleres Plantel 03 Chimalhuacán
+    </div>
+  </div>
+
+  <!-- TIP -->
+  <div class="tip">
+    <strong>💡 Cómo usar esta guía:</strong> Lee cada sección con calma, subraya las ideas clave, revisa los ejemplos y las tablas comparativas. Al final de cada propósito encontrarás una <strong>autoevaluación con respuestas ocultas</strong>: primero contesta mentalmente y luego presiona <em>"Ver respuesta"</em> para verificar. Repasa especialmente las comparaciones y las definiciones: son las que más suelen evaluarse.
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <h2>🗂️ Contenido</h2>
+    <ol>
+      <li><a href="#p1">Propósito 1: Fundamentos de la Era Digital (Hardware y Software)</a></li>
+      <li><a href="#p2">Propósito 2: Licencias de Software y Conectividad</a></li>
+      <li><a href="#p3">Propósito 3: Impacto Sociocultural de la Tecnología</a></li>
+      <li><a href="#p4">Propósito 4: Software Libre y Creación con Libertad</a></li>
+      <li><a href="#cierre">Consejos finales para el examen</a></li>
+    </ol>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- PROPÓSITO 1                                            -->
+  <!-- ===================================================== -->
+  <section class="seccion" id="p1">
+    <h2>💻 Propósito 1: Fundamentos de la Era Digital</h2>
+    <p class="subtitulo">Hardware, Software y evolución tecnológica</p>
+
+    <h3>🔧 Hardware: el cuerpo de la máquina</h3>
+    <p>El <strong>hardware</strong> son todas las partes <strong>físicas y tangibles</strong> de un dispositivo electrónico: lo que puedes ver y tocar. Es como el <em>cuerpo</em> de una persona. Incluye componentes internos (dentro del gabinete) y externos (periféricos como el teclado, el mouse o el monitor).</p>
+
+    <h4>Componentes clave</h4>
+    <div class="concepto">
+      <strong>CPU (Unidad Central de Procesamiento):</strong> Es el <em>cerebro</em> del dispositivo. Se encarga de interpretar y ejecutar las instrucciones y realizar los cálculos. Su velocidad se mide en <strong>GHz (Gigachercios)</strong> y determina qué tan rápido "piensa" el equipo.
+    </div>
+    <div class="concepto">
+      <strong>RAM (Memoria de Acceso Aleatorio):</strong> Es el <em>escritorio de trabajo</em>. Memoria <strong>temporal y volátil</strong> (se borra al apagar el equipo). Aquí se cargan los programas que estás usando en el momento. <strong>Más RAM = más aplicaciones abiertas al mismo tiempo sin que se trabe.</strong>
+    </div>
+    <div class="concepto">
+      <strong>Almacenamiento (Disco Duro / SSD):</strong> Es el <em>archivador</em> o biblioteca personal. Guarda archivos de forma <strong>permanente</strong>, incluso cuando el equipo está apagado. Los <strong>SSD</strong> (Unidad de Estado Sólido) son mucho más rápidos que los discos duros tradicionales (HDD).
+    </div>
+
+    <div class="ejemplo">
+      <strong>🔍 Analogía útil:</strong> Imagina una cocina. La <em>CPU</em> es el chef (procesa), la <em>RAM</em> es la mesa de trabajo (espacio temporal), y el <em>almacenamiento</em> es la alacena (donde guardas todo de forma permanente).
+    </div>
+
+    <h3>🧠 Software: la mente de la máquina</h3>
+    <p>El <strong>software</strong> son los programas, instrucciones y datos que <strong>no puedes tocar</strong>, pero que le dicen al hardware qué hacer. Es como la <em>conciencia y los pensamientos</em> de una persona.</p>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de software</th>
+            <th>¿Qué hace?</th>
+            <th>Ejemplos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Software de Sistema (S.O.)</strong></td>
+            <td>El "director de orquesta". Gestiona todos los recursos del hardware y permite que los demás programas funcionen. Es la base.</td>
+            <td>Windows, Android, iOS, Linux, macOS</td>
+          </tr>
+          <tr>
+            <td><strong>Software de Aplicación</strong></td>
+            <td>Herramientas específicas para tareas concretas. Son las que usas directamente.</td>
+            <td>Word, TikTok, WhatsApp, un videojuego, Photoshop</td>
+          </tr>
+          <tr>
+            <td><strong>Software Utilitario</strong></td>
+            <td>Programas pequeños que ayudan a mantener, optimizar o proteger el sistema.</td>
+            <td>Antivirus, WinRAR, CCleaner, desfragmentadores</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>💬 Lenguajes de programación y compilación</h3>
+    <div class="definicion">
+      <strong>Lenguaje de programación:</strong> Conjunto de reglas (sintaxis) y palabras clave que permiten a un programador dar instrucciones precisas a una computadora. Ejemplos: <em>Python, JavaScript, C++</em>.
+    </div>
+    <div class="definicion">
+      <strong>Compilación:</strong> Proceso de traducir el <strong>código fuente</strong> (escrito por el programador en lenguaje de alto nivel) a <strong>lenguaje máquina</strong> (código binario de 0s y 1s) que el procesador puede entender. El <em>compilador</em> es el programa que hace esta traducción.
+    </div>
+
+    <h3>📈 Ley de Moore</h3>
+    <p>Observación hecha por <strong>Gordon Moore</strong> en 1965: el número de <strong>transistores</strong> en un microchip se <strong>duplica aproximadamente cada 2 años</strong>. Esto provocó un aumento exponencial de la potencia de procesamiento y una disminución simultánea del costo. En la actualidad se enfrenta a límites físicos y su ritmo se ha ralentizado, pero impulsó toda la revolución digital.</p>
+
+    <div class="mnemotecnia">
+      <div class="titulo">🧠 TRUCO PARA RECORDAR</div>
+      <div class="palabra">2 × 2 = 4</div>
+      <p>Cada <strong>2 años</strong>, los transistores se <strong>duplican</strong> (x2). Moore = <strong>M</strong>ás potencia, <strong>M</strong>enos costo.</p>
+    </div>
+
+    <h3>🕰️ Historia crítica: De los Mainframes al Móvil</h3>
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Era</th>
+            <th>Periodo</th>
+            <th>Características</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mainframes</strong></td>
+            <td>1950-1970</td>
+            <td>Computadoras enormes, costosas, uso exclusivo de gobiernos y grandes corporaciones. Terminales "tontas".</td>
+          </tr>
+          <tr>
+            <td><strong>Computación Personal</strong></td>
+            <td>1970-1990</td>
+            <td>Invención del microprocesador. Aparecen las PCs (IBM PC, Apple II). Democratización parcial del acceso.</td>
+          </tr>
+          <tr>
+            <td><strong>Era Móvil e Internet</strong></td>
+            <td>1990-actualidad</td>
+            <td>Popularización de Internet y dispositivos móviles (smartphones, tablets). Tecnología portátil, personal y omnipresente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>🌍 Impacto socioambiental</h3>
+    <div class="alerta">
+      <strong>e-Waste (Residuos Electrónicos):</strong> Todos los dispositivos electrónicos y eléctricos desechados. Es la corriente de residuos de más rápido crecimiento global. Contienen materiales valiosos (oro, cobre, tierras raras) pero también <strong>tóxicos</strong> (plomo, mercurio, cadmio) que contaminan suelo, agua y aire si no se gestionan bien.
+    </div>
+    <div class="alerta">
+      <strong>Huella de Carbono Digital:</strong> Totalidad de emisiones de gases de efecto invernadero generadas a lo largo del ciclo de vida de los dispositivos (fabricación, uso, desecho) y de la infraestructura de Internet (centros de datos, redes de transmisión).
+    </div>
+
+    <!-- AUTOEVALUACIÓN P1 -->
+    <div class="autoevaluacion">
+      <h4>✅ Autoevaluación — Propósito 1</h4>
+      <ol>
+        <li>¿Cuál es la diferencia entre CPU, RAM y almacenamiento?</li>
+        <li>¿Qué predice la Ley de Moore y por qué es importante?</li>
+        <li>Menciona tres tipos de software y un ejemplo de cada uno.</li>
+      </ol>
+      <details>
+        <summary>Ver respuesta 1</summary>
+        <p><strong>CPU:</strong> procesa instrucciones (cerebro). <strong>RAM:</strong> memoria temporal y volátil donde se cargan los programas activos (escritorio de trabajo). <strong>Almacenamiento:</strong> guarda archivos de forma permanente (archivador).</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 2</summary>
+        <p>Predice que los transistores en un microchip se <strong>duplican cada ~2 años</strong>, aumentando la potencia y reduciendo el costo. Impulsó la revolución digital.</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 3</summary>
+        <p><strong>Sistema:</strong> Windows, Android. <strong>Aplicación:</strong> Word, TikTok. <strong>Utilitario:</strong> Antivirus, WinRAR.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- PROPÓSITO 2                                            -->
+  <!-- ===================================================== -->
+  <section class="seccion" id="p2">
+    <h2>🔓 Propósito 2: Licencias de Software y Conectividad</h2>
+    <p class="subtitulo">Tipos de licencias, Creative Commons y funcionamiento de Internet</p>
+
+    <h3>📜 Tipos de licencias de software</h3>
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>¿Se paga?</th>
+            <th>Código fuente</th>
+            <th>¿Se puede modificar?</th>
+            <th>Ejemplos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Comercial (Propietario)</strong></td>
+            <td>Sí</td>
+            <td>Secreto</td>
+            <td>No</td>
+            <td>Microsoft Office, Adobe Photoshop, Windows</td>
+          </tr>
+          <tr>
+            <td><strong>Freeware</strong></td>
+            <td>No (gratis)</td>
+            <td>Secreto</td>
+            <td>No</td>
+            <td>Google Chrome, WhatsApp, Spotify (versión gratis)</td>
+          </tr>
+          <tr>
+            <td><strong>Software Libre (FOSS)</strong></td>
+            <td>Puede ser gratis o pago</td>
+            <td>Abierto</td>
+            <td>Sí</td>
+            <td>Linux, LibreOffice, GIMP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alerta">
+      <strong>⚠️ Cuidado:</strong> "Libre" <strong>NO</strong> significa "gratis". Se refiere a la <strong>libertad</strong> del usuario. Aunque la mayoría del software libre es gratuito, lo esencial es que respeta las 4 libertades.
+    </div>
+
+    <h3>🎨 Licencias Creative Commons</h3>
+    <p>No son para software, sino para <strong>obras creativas</strong> (música, imágenes, textos, videos). Permiten a los creadores decidir qué permisos otorgan al público. Las condiciones más comunes son:</p>
+    <ul>
+      <li><strong>BY (Atribución):</strong> Hay que reconocer al autor original.</li>
+      <li><strong>NC (No Comercial):</strong> No se puede usar con fines de lucro.</li>
+      <li><strong>ND (Sin Obras Derivadas):</strong> No se puede modificar la obra.</li>
+      <li><strong>SA (Compartir Igual):</strong> Las obras derivadas deben compartirse con la misma licencia.</li>
+    </ul>
+
+    <div class="mnemotecnia">
+      <div class="titulo">🧠 TRUCO PARA RECORDAR</div>
+      <div class="palabra">BY · NC · ND · SA</div>
+      <p><strong>B</strong>y = <em>By</em> (menciona al autor). <strong>N</strong>C = <em>No Cash</em> (sin lucro). <strong>N</strong>D = <em>No Derivadas</em> (no modificar). <strong>S</strong>A = <em>Same</em> (misma licencia).</p>
+    </div>
+
+    <h3>🌐 Funcionamiento de Internet</h3>
+    <div class="concepto">
+      <strong>TCP/IP:</strong> Es el protocolo <strong>fundamental</strong> que gestiona el envío de <strong>paquetes de datos</strong> entre dispositivos. Es como el "sistema de correos" de Internet.
+    </div>
+    <div class="concepto">
+      <strong>HTTP / HTTPS:</strong> Protocolo usado para acceder a las <strong>páginas web</strong>. La <strong>"S" final significa conexión segura y cifrada</strong> (HTTPS = HyperText Transfer Protocol Secure).
+    </div>
+    <div class="concepto">
+      <strong>Navegadores ligeros:</strong> Versiones de navegadores diseñadas para funcionar en dispositivos con <strong>pocos recursos</strong> o conexiones lentas, consumiendo menos datos y energía. Ejemplos: <em>Opera Mini, Firefox Lite</em>.
+    </div>
+
+    <!-- AUTOEVALUACIÓN P2 -->
+    <div class="autoevaluacion">
+      <h4>✅ Autoevaluación — Propósito 2</h4>
+      <ol>
+        <li>¿Cuál es la diferencia entre Freeware y Software Libre?</li>
+        <li>¿Qué significa la "S" en HTTPS y por qué es importante?</li>
+        <li>Menciona las cuatro condiciones comunes de Creative Commons.</li>
+      </ol>
+      <details>
+        <summary>Ver respuesta 1</summary>
+        <p>El <strong>Freeware</strong> es gratis pero su código es <strong>secreto</strong> (propietario), no se puede modificar. El <strong>Software Libre</strong> respeta las 4 libertades: usar, estudiar, modificar y distribuir (código abierto).</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 2</summary>
+        <p>La "S" significa <strong>Secure</strong> (seguro). Indica que la conexión está <strong>cifrada</strong>, protegiendo los datos que se intercambian entre el usuario y el sitio web.</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 3</summary>
+        <p><strong>BY</strong> (Atribución), <strong>NC</strong> (No Comercial), <strong>ND</strong> (Sin Obras Derivadas), <strong>SA</strong> (Compartir Igual).</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- PROPÓSITO 3                                            -->
+  <!-- ===================================================== -->
+  <section class="seccion" id="p3">
+    <h2>🌐 Propósito 3: Impacto Sociocultural de la Tecnología</h2>
+    <p class="subtitulo">Brecha digital, colonialismo de datos y conciencia crítica</p>
+
+    <h3>📉 Brecha Digital</h3>
+    <p>Es la <strong>desigualdad en el acceso, uso o impacto</strong> de las Tecnologías de la Información y la Comunicación (TIC) entre diferentes grupos sociales. Se divide en tres dimensiones:</p>
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimensión</th>
+            <th>¿Qué analiza?</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Brecha de Acceso</strong></td>
+            <td>Si tienes o no conexión a internet y dispositivos (computadora, smartphone). Es la más básica.</td>
+            <td>Una familia sin internet en casa vs. otra con fibra óptica.</td>
+          </tr>
+          <tr>
+            <td><strong>Brecha de Uso</strong></td>
+            <td>Las habilidades y competencias para usar la tecnología más allá del entretenimiento básico.</td>
+            <td>Saber usar Excel para un trabajo vs. solo ver TikTok.</td>
+          </tr>
+          <tr>
+            <td><strong>Brecha de Calidad de Uso</strong></td>
+            <td>Cómo se aprovechan las oportunidades digitales para mejorar la calidad de vida (personal, educativo, económico). Es la más profunda.</td>
+            <td>Usar la tecnología para emprender o estudiar una carrera vs. solo para ocio.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>🧠 Alfabetización Digital Crítica</h3>
+    <p>No se trata solo de saber usar un programa. Implica <strong>comprender el ecosistema digital</strong>: quién controla la información, cómo funcionan los algoritmos, qué intereses económicos hay detrás de las plataformas y cuál es el impacto social y ético de la tecnología. Una persona con alfabetización crítica <strong>analiza, cuestiona y se empodera</strong> activamente.</p>
+
+    <h3>🏢 Big Tech (Corporaciones de Innovación Tecnológica)</h3>
+    <p>Pequeño grupo de empresas multinacionales que dominan la economía digital global: <strong>Google/Alphabet, Meta (Facebook), Amazon, Apple y Microsoft</strong>. Su poder impacta la política, los medios, la cultura y la vida social. Su modelo de negocio se basa en <strong>recolectar, analizar y monetizar datos personales</strong> a gran escala.</p>
+
+    <h3>💰 Colonialismo de Datos</h3>
+    <div class="alerta">
+      <strong>Definición:</strong> Práctica donde empresas, gobiernos o instituciones poderosas <strong>extraen, analizan y monetizan datos</strong> personales y colectivos de usuarios o comunidades (a menudo del Sur Global) <strong>sin compensación justa, transparencia ni consentimiento significativo</strong>. Se llama "colonialismo" porque replica la dinámica histórica de explotación de recursos (ahora datos).
+    </div>
+
+    <h3>👁️ Mercantilización de la Atención</h3>
+    <p>En la economía digital, la <strong>atención del usuario</strong> se ha convertido en el producto más valioso. Las plataformas (redes sociales, apps, servicios "gratuitos") están diseñadas con <strong>algoritmos para maximizar el tiempo de permanencia</strong> (<em>engagement</em>) del usuario, con el fin de mostrar más publicidad y recopilar más datos. Así, tu atención es <strong>empaquetada y vendida a los anunciantes</strong>.</p>
+
+    <h3>📴 Herramientas Offline</h3>
+    <p>Programas diseñados para funcionar <strong>sin conexión a internet constante</strong>. Son cruciales para reducir la brecha digital, ya que permiten trabajar, estudiar y crear en entornos con conectividad limitada. Ejemplos: <em>LibreOffice, GIMP, Khan Academy (contenido descargable)</em>.</p>
+
+    <h3>😰 Dependencia Tecnológica</h3>
+    <p>Uso excesivo o problemático de la tecnología. Ejemplos:</p>
+    <ul>
+      <li><strong>Nomofobia:</strong> Ansiedad o malestar al no tener el teléfono móvil.</li>
+      <li><strong>Tecnoestrés:</strong> Estrés por el uso constante de dispositivos.</li>
+      <li><strong>Adicción digital:</strong> Pérdida de control sobre el tiempo en pantalla.</li>
+    </ul>
+
+    <!-- AUTOEVALUACIÓN P3 -->
+    <div class="autoevaluacion">
+      <h4>✅ Autoevaluación — Propósito 3</h4>
+      <ol>
+        <li>¿Cuáles son las tres dimensiones de la brecha digital?</li>
+        <li>Explica con tus palabras el colonialismo de datos.</li>
+        <li>¿Qué es la mercantilización de la atención?</li>
+      </ol>
+      <details>
+        <summary>Ver respuesta 1</summary>
+        <p><strong>Acceso</strong> (tener o no conexión/dispositivos), <strong>Uso</strong> (habilidades digitales) y <strong>Calidad de Uso</strong> (aprovechamiento para mejorar la vida).</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 2</summary>
+        <p>Es cuando empresas o instituciones poderosas extraen y monetizan datos personales de usuarios o comunidades sin compensación justa ni consentimiento significativo, replicando la lógica de explotación colonial.</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 3</summary>
+        <p>Es el modelo de negocio donde la <strong>atención del usuario</strong> se convierte en producto: las plataformas diseñan algoritmos para retenerte más tiempo y luego venden esa atención a los anunciantes.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- PROPÓSITO 4                                            -->
+  <!-- ===================================================== -->
+  <section class="seccion" id="p4">
+    <h2>🐧 Propósito 4: Software Libre y Creación con Libertad</h2>
+    <p class="subtitulo">Las 4 libertades, GNU/Linux, cultura hacker y DIY</p>
+
+    <h3>🗝️ Las 4 Libertades del Software Libre</h3>
+    <p>Son el <strong>pilar filosófico</strong> de este movimiento. Todo software libre debe garantizarlas:</p>
+
+    <div class="grid-libertades">
+      <div class="tarjeta-libertad">
+        <span class="numero">0</span>
+        <h4>Libertad de USAR</h4>
+        <p>Usar el programa con <strong>cualquier propósito</strong>, sin restricciones.</p>
+        <p><em>Ejemplo:</em> Usar LibreOffice para la escuela, el trabajo o proyectos personales.</p>
+      </div>
+      <div class="tarjeta-libertad">
+        <span class="numero">1</span>
+        <h4>Libertad de ESTUDIAR</h4>
+        <p><strong>Estudiar cómo funciona</strong> el programa y cambiarlo para que haga lo que tú deseas. Requiere acceso al <strong>código fuente</strong>.</p>
+        <p><em>Ejemplo:</em> Ver y modificar el código de un programa para adaptarlo.</p>
+      </div>
+      <div class="tarjeta-libertad">
+        <span class="numero">2</span>
+        <h4>Libertad de DISTRIBUIR</h4>
+        <p><strong>Distribuir copias</strong> del programa para ayudar a otros.</p>
+        <p><em>Ejemplo:</em> Compartir LibreOffice con un compañero que no lo tiene.</p>
+      </div>
+      <div class="tarjeta-libertad">
+        <span class="numero">3</span>
+        <h4>Libertad de MEJORAR</h4>
+        <p><strong>Distribuir copias modificadas</strong> para que toda la comunidad se beneficie de tus mejoras.</p>
+        <p><em>Ejemplo:</em> Publicar tu versión mejorada para que otros la usen.</p>
+      </div>
+    </div>
+
+    <div class="mnemotecnia">
+      <div class="titulo">🧠 TRUCO PARA RECORDAR LAS 4 LIBERTADES</div>
+      <div class="palabra">U · E · D · M</div>
+      <p><strong>U</strong>sar · <strong>E</strong>studiar · <strong>D</strong>istribuir · <strong>M</strong>ejorar</p>
+    </div>
+
+    <h3>🐧 GNU/Linux</h3>
+    <p>Es el ejemplo más exitoso y representativo del software libre: un <strong>sistema operativo completo</strong> construido colaborativamente. Es la base de <strong>Android</strong>, de la mayoría de los servidores de Internet y de muchas supercomputadoras.</p>
+
+    <h3>⚖️ Software Libre vs. Open Source</h3>
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Software Libre</th>
+            <th>Open Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Enfoque</strong></td>
+            <td>Ético y social</td>
+            <td>Práctico y comercial</td>
+          </tr>
+          <tr>
+            <td><strong>Fundamento</strong></td>
+            <td>La libertad del usuario como derecho fundamental</td>
+            <td>El código abierto produce software más seguro, estable e innovador</td>
+          </tr>
+          <tr>
+            <td><strong>Promovido por</strong></td>
+            <td>Richard Stallman / Free Software Foundation (FSF)</td>
+            <td>Comunidad empresarial y desarrolladores</td>
+          </tr>
+          <tr>
+            <td><strong>Frase clave</strong></td>
+            <td>"El software debe servir a su comunidad, no controlarla"</td>
+            <td>"El código abierto es una metodología de desarrollo eficaz"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="concepto">
+      <strong>En la práctica:</strong> Casi todo el software libre es de código abierto y viceversa. La diferencia es de <strong>énfasis filosófico</strong>: uno es una postura ética sobre la libertad, el otro una metodología sobre la eficacia.
+    </div>
+
+    <h3>🎩 Cultura Hacker</h3>
+    <div class="definicion">
+      En su sentido <strong>original y positivo</strong>, un <em>hacker</em> <strong>NO es un delincuente informático</strong>. Es una persona <strong>curiosa, apasionada por la tecnología</strong>, que disfruta explorando los límites de los sistemas y resolviendo problemas de forma inteligente y creativa.
+    </div>
+
+    <h3>🛠️ Cultura DIY ("Hazlo Tú Mismo") y Apropiación Tecnológica</h3>
+    <div class="concepto">
+      <strong>DIY (Do It Yourself):</strong> Filosofía que promueve la <strong>autosuficiencia, autonomía y aprendizaje mediante la acción</strong>. En tecnología, significa construir, modificar, adaptar o reparar dispositivos por uno mismo, sin depender de soluciones comerciales cerradas.
+    </div>
+    <div class="concepto">
+      <strong>Apropiación Tecnológica:</strong> Va más allá del DIY. Es cuando las personas o comunidades <strong>adoptan, adaptan, reinventan</strong> una tecnología y le dan un <strong>nuevo significado</strong> según sus necesidades, contexto cultural y creatividad, a menudo desviándose del uso original previsto por sus creadores.
+    </div>
+
+    <!-- AUTOEVALUACIÓN P4 -->
+    <div class="autoevaluacion">
+      <h4>✅ Autoevaluación — Propósito 4</h4>
+      <ol>
+        <li>Menciona y explica brevemente las 4 libertades del software libre.</li>
+        <li>¿Cuál es la diferencia principal entre Software Libre y Open Source?</li>
+        <li>¿Qué significa realmente ser "hacker" en su sentido original?</li>
+      </ol>
+      <details>
+        <summary>Ver respuesta 1</summary>
+        <p><strong>Libertad 0:</strong> Usar. <strong>Libertad 1:</strong> Estudiar y modificar. <strong>Libertad 2:</strong> Distribuir copias. <strong>Libertad 3:</strong> Distribuir versiones modificadas.</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 2</summary>
+        <p>El <strong>Software Libre</strong> es una <em>postura ética</em> sobre la libertad del usuario (Stallman/FSF). El <strong>Open Source</strong> es una <em>metodología de desarrollo</em> enfocada en la eficacia y calidad del software.</p>
+      </details>
+      <details>
+        <summary>Ver respuesta 3</summary>
+        <p>Un hacker (en su sentido positivo) es una persona <strong>curiosa y apasionada por la tecnología</strong>, que resuelve problemas de forma inteligente y creativa. No es un delincuente informático.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- CIERRE                                                 -->
+  <!-- ===================================================== -->
+  <section class="seccion" id="cierre" style="border-top-color: #d97706;">
+    <h2>🎯 Consejos finales para el examen</h2>
+    <p class="subtitulo">Estrategias para recordar y aplicar lo aprendido</p>
+
+    <h3>📌 Repasa especialmente estos puntos</h3>
+    <ul>
+      <li><strong>Diferencias entre CPU, RAM y almacenamiento</strong> (Propósito 1).</li>
+      <li><strong>Ley de Moore</strong>: cada 2 años se duplican los transistores.</li>
+      <li><strong>Tipos de licencias de software</strong>: comercial, freeware, libre (Propósito 2).</li>
+      <li><strong>Las 4 condiciones de Creative Commons</strong>: BY, NC, ND, SA.</li>
+      <li><strong>TCP/IP vs. HTTP/HTTPS</strong>: el primero envía paquetes, el segundo accede a páginas web.</li>
+      <li><strong>Las 3 dimensiones de la brecha digital</strong>: acceso, uso, calidad de uso (Propósito 3).</li>
+      <li><strong>Colonialismo de datos y mercantilización de la atención</strong>: conceptos críticos.</li>
+      <li><strong>Las 4 libertades del software libre</strong>: usar, estudiar, distribuir, mejorar (Propósito 4).</li>
+      <li><strong>Software Libre vs. Open Source</strong>: ética vs. metodología.</li>
+      <li><strong>Cultura hacker y DIY</strong>: en su sentido positivo y creativo.</li>
+    </ul>
+
+    <h3>🧠 Técnicas de estudio recomendadas</h3>
+    <ol>
+      <li><strong>Subraya</strong> las definiciones y usa colores para diferenciar conceptos.</li>
+      <li><strong>Explícale el tema a alguien más</strong>: si puedes enseñarlo, lo entendiste.</li>
+      <li><strong>Usa las mnemotecnias</strong> que aparecen en esta guía (U·E·D·M, BY·NC·ND·SA, 2×2=4).</li>
+      <li><strong>Responde la autoevaluación</strong> de cada propósito sin mirar las respuestas y luego verifica.</li>
+      <li><strong>Descansa</strong>: estudiar con pausas de 5-10 minutos cada 30 minutos es más efectivo.</li>
+      <li><strong>Duerme bien</strong> la noche anterior: el cerebro consolida lo aprendido mientras duermes.</li>
+    </ol>
+
+    <div class="tip" style="margin-top: 18px;">
+      <strong>🌟 Recuerda:</strong> El examen no busca que memorices todo, sino que <strong>comprendas los conceptos clave</strong> y los puedas aplicar. Si te preparas con calma y constancia, te irá muy bien. ¡Tú puedes!
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Guía de Estudio — Cultura Digital 1 · Primer Parcial</strong></p>
+    <p>Elaborada por: LIA José Huidobro Espejel · Colegio de Bachilleres Plantel 03 Chimalhuacán</p>
+    <p style="margin-top:6px; font-size:0.78rem;">Material de apoyo académico. Uso exclusivo de los estudiantes del Plantel 03.</p>
+  </footer>
+
+</div>
+
+<!-- BOTÓN ARRIBA -->
+<button class="btn-arriba" id="btnArriba" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Volver arriba">↑</button>
+
+<script>
+  // Mostrar/ocultar botón "volver arriba"
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('btnArriba');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
